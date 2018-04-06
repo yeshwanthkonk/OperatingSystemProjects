@@ -48,13 +48,13 @@ int main()
         printf("\n");
         RT[i] = BT[i];
     }
-    printf("----------------------GANTTCHART---------------------------\n");
+    printf("----------------------------------------------------GANTTCHART---------------------------------------------------------\n");
     int time = AT[0];
-    j=0;
-    while(j<2)
+    int z;
+    for(z=0;z<2;)
     {
-        ++j;
-        if(j==1)
+        ++z;
+        if(z==1)
             TS = 3;
         else
             TS = 6;
@@ -119,5 +119,10 @@ int main()
         RT[i] = 0;
         TRT[i] = time - AT[i];
         WT[i] = TRT[i] - BT[i];
+    }
+    printf("Waiting Time of Processes:      ||      Turn Around Time of Processes: \n");
+    for(i=0;i<Proce;i++)
+    {
+        printf("\t%d\t\t\t\t\t %d\n",WT[i],TRT[i]);
     }
 }
