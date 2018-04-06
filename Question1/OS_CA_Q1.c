@@ -48,9 +48,9 @@ int main()
         printf("\n");
         RT[i] = BT[i];
     }
-    printf("----------------------GANTTCHART---------------------------\n");
+    printf("----------------------------------------------------GANTTCHART---------------------------------------------------------\n");
     int time = AT[0];
-    int z=0;
+    int z;
     for(z=0;z<2;)
     {
         ++z;
@@ -109,16 +109,6 @@ int main()
                 P[j][1] = var2;
             }
         }
-    }
-    for(i=0;i<Proce;i++)
-    {
-        if(RT[i]==0)
-            continue;
-        printf("%c%d : %d  -  %d \n",P[i][0],P[i][1],time,time+RT[i]);
-        time = time + RT[i];
-        RT[i] = 0;
-        TRT[i] = time - AT[i];
-        WT[i] = TRT[i] - BT[i];
     }
     for(i=0;i<Proce;i++)
     {
